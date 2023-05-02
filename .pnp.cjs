@@ -26,6 +26,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "tsconfig",\
         "reference": "workspace:packages/tsconfig"\
+      },\
+      {\
+        "name": "ui",\
+        "reference": "workspace:packages/ui"\
       }\
     ],\
     "enableTopLevelFallback": true,\
@@ -34,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["eslint-config-custom", ["workspace:packages/eslint-config-custom"]],\
       ["next-app", ["workspace:apps/next-app"]],\
       ["tsconfig", ["workspace:packages/tsconfig"]],\
+      ["ui", ["workspace:packages/ui"]],\
       ["yarn-monorepo", ["workspace:."]]\
     ],\
     "fallbackPool": [\
@@ -3578,7 +3583,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["node-sass", null],\
             ["postcss", "npm:8.4.14"],\
             ["react", "npm:18.2.0"],\
-            ["react-dom", "virtual:6d874517dbbdc1af1c980c50428391e81611acf150df58e6c28df8a0d2a9b71cc9e3ef0df1991bbd889525dadf0f74c93b836fab7a8f9374c48fc57a22d92c6f#npm:18.2.0"],\
+            ["react-dom", "virtual:9dce388d82c018b4a7af5edc7243e51f7023d1ab93a923b3959d0066ac6881c93b965a0932486426cbefa96c9c8e47849d5ff541d2404b8aca246480fa32f0d2#npm:18.2.0"],\
             ["sass", null],\
             ["styled-jsx", "virtual:ca7e26a1f28af72060ec8e2ec8e17635e29144eccfbacfc4dd0f58fcf73ae91babbe342d3637cea95df1a1a8da93aba7c9cfbac20a537271e713f0c5a5a81bf3#npm:5.1.1"]\
           ],\
@@ -3613,9 +3618,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:6d874517dbbdc1af1c980c50428391e81611acf150df58e6c28df8a0d2a9b71cc9e3ef0df1991bbd889525dadf0f74c93b836fab7a8f9374c48fc57a22d92c6f#npm:13.3.1"],\
             ["postcss", "npm:8.4.23"],\
             ["react", "npm:18.2.0"],\
-            ["react-dom", "virtual:6d874517dbbdc1af1c980c50428391e81611acf150df58e6c28df8a0d2a9b71cc9e3ef0df1991bbd889525dadf0f74c93b836fab7a8f9374c48fc57a22d92c6f#npm:18.2.0"],\
+            ["react-dom", "virtual:9dce388d82c018b4a7af5edc7243e51f7023d1ab93a923b3959d0066ac6881c93b965a0932486426cbefa96c9c8e47849d5ff541d2404b8aca246480fa32f0d2#npm:18.2.0"],\
             ["tailwindcss", "npm:3.3.2"],\
-            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=1f5320"]\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=1f5320"],\
+            ["ui", "workspace:packages/ui"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4194,10 +4200,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:6d874517dbbdc1af1c980c50428391e81611acf150df58e6c28df8a0d2a9b71cc9e3ef0df1991bbd889525dadf0f74c93b836fab7a8f9374c48fc57a22d92c6f#npm:18.2.0", {\
-          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-51a2db3907/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
+        ["virtual:9dce388d82c018b4a7af5edc7243e51f7023d1ab93a923b3959d0066ac6881c93b965a0932486426cbefa96c9c8e47849d5ff541d2404b8aca246480fa32f0d2#npm:18.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-96fbc9ab56/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
           "packageDependencies": [\
-            ["react-dom", "virtual:6d874517dbbdc1af1c980c50428391e81611acf150df58e6c28df8a0d2a9b71cc9e3ef0df1991bbd889525dadf0f74c93b836fab7a8f9374c48fc57a22d92c6f#npm:18.2.0"],\
+            ["react-dom", "virtual:9dce388d82c018b4a7af5edc7243e51f7023d1ab93a923b3959d0066ac6881c93b965a0932486426cbefa96c9c8e47849d5ff541d2404b8aca246480fa32f0d2#npm:18.2.0"],\
             ["@types/react", "npm:18.2.0"],\
             ["loose-envify", "npm:1.4.0"],\
             ["react", "npm:18.2.0"],\
@@ -4510,6 +4516,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["ssri", "npm:9.0.1"],\
             ["minipass", "npm:3.3.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["std", [\
+        ["npm:0.1.22", {\
+          "packageLocation": "./.yarn/cache/std-npm-0.1.22-595c15950c-27036ff92a.zip/node_modules/std/",\
+          "packageDependencies": [\
+            ["std", "npm:0.1.22"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4950,6 +4965,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["ui", [\
+        ["npm:0.0.0", {\
+          "packageLocation": "./.yarn/cache/ui-npm-0.0.0-d49d1f7843-e687357b83.zip/node_modules/ui/",\
+          "packageDependencies": [\
+            ["ui", "npm:0.0.0"],\
+            ["std", "npm:0.1.22"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["workspace:packages/ui", {\
+          "packageLocation": "./packages/ui/",\
+          "packageDependencies": [\
+            ["@types/react", "npm:18.2.0"],\
+            ["@types/react-dom", "npm:18.2.1"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:9dce388d82c018b4a7af5edc7243e51f7023d1ab93a923b3959d0066ac6881c93b965a0932486426cbefa96c9c8e47849d5ff541d2404b8aca246480fa32f0d2#npm:18.2.0"],\
+            ["tsconfig", "workspace:packages/tsconfig"],\
+            ["ui", "npm:0.0.0"],\
+            ["workspace", "npm:0.0.1-preview.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["unbox-primitive", [\
         ["npm:1.0.2", {\
           "packageLocation": "./.yarn/cache/unbox-primitive-npm-1.0.2-cb56a05066-b7a1cf5862.zip/node_modules/unbox-primitive/",\
@@ -5093,6 +5131,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/word-wrap-npm-1.2.3-7fb15ab002-30b48f91fc.zip/node_modules/word-wrap/",\
           "packageDependencies": [\
             ["word-wrap", "npm:1.2.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["workspace", [\
+        ["npm:0.0.1-preview.1", {\
+          "packageLocation": "./.yarn/cache/workspace-npm-0.0.1-preview.1-37e8956085-0d3a1ed8a5.zip/node_modules/workspace/",\
+          "packageDependencies": [\
+            ["workspace", "npm:0.0.1-preview.1"]\
           ],\
           "linkType": "HARD"\
         }]\
